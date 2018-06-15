@@ -25,10 +25,10 @@
 
 bool convert(const QString & in, const QString & out, bool landscape)
 {
-    std::cout << "input: "
+    std::cout << "INPUT: "
               << in.toStdString()
               << std::endl
-              << "output: "
+              << "OUTPUT: "
               << out.toStdString()
               << std::endl;
 

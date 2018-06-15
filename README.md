@@ -38,7 +38,7 @@ FINISHED
 
 Just pass file paths having different suffixes:
 
-`HTD.exe C:\Documents\webpage\111.doc C:\Documents\webpage\rtf.rtf`
+`HTD.exe C:\Documents\webpage\111.doc C:\Documents\webpage\_111.rtf`
 
 
 ## Setting the orientation of the output file
@@ -96,9 +96,9 @@ FINISHED
 
 ## 转换其他格式
 
-使用不投后缀名的文件路径即可，例如：
+直接在输入输出路径中传递你想要的后缀名即可，例如：
 
-`HTD.exe C:\Documents\webpage\111.doc C:\Documents\webpage\111.rtf`
+`HTD.exe C:\Documents\webpage\111.doc C:\Documents\webpage\_111.rtf`
 
 ## 设置输出文件的纸张方向
 

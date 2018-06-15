@@ -49,6 +49,8 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
+    std::cout << "INFO: For latest version or other information, visit https://github.com/metorm/HTD" << std::endl;
+
     const QString appDescription("Html to Microsoft Word converter");
     QApplication::setApplicationName(appDescription);
 
