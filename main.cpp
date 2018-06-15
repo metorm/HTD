@@ -57,8 +57,8 @@ int main(int argc, char *argv[])
     QCommandLineParser parser;
     parser.setApplicationDescription(appDescription);
     parser.addHelpOption();
-    parser.addPositionalArgument("input", QCoreApplication::translate("main", "Path to the HTML file (or any other parsable formats of MS Word)"));
-    parser.addPositionalArgument("output", QCoreApplication::translate("main", "Path to the output file."));
+    parser.addPositionalArgument("input", QCoreApplication::translate("main", "Full path to the HTML file (or any other parsable formats of MS Word). Only ASCII characters are allowed."));
+    parser.addPositionalArgument("output", QCoreApplication::translate("main", "Full path to the output file. Only ASCII characters are allowed."));
 
     QCommandLineOption landscapeOption(QStringList() << "l" << "landscape",
                                        QCoreApplication::translate("main", "Set the paper orientation to landscape"));
