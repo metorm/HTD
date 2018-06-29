@@ -8,6 +8,8 @@ But it should also applies to other acceptable formats such as `*rft`, `*.txt`, 
 
 ```
 C:\Documents\dev\build-HTD-Static-Release\release>HTD.exe --help
+
+INFO: For latest version or other information, visit https://github.com/metorm/HTD
 Usage: HTD.exe [options] input output
 Html to Microsoft Word converter
 
@@ -16,11 +18,14 @@ Options:
   -l, --landscape  Set the paper orientation to landscape
 
 Arguments:
-  input            Path to the HTML file (or any other parsable formats of MS
-                   Word)
-  output           Path to the output file.
+  input            Full path to the HTML file (or any other parsable formats of
+                   MS Word). Only ASCII characters are allowed.
+  output           Full path to the output file. Only ASCII characters are
+                   allowed.
 
 ```
+
+**Note:** The Paths must be full paths. Only ASCII characters are allowed.
 
 ## Convert `*.html` to `*.doc`
 
@@ -67,7 +72,7 @@ HTD是一个绿色版小工具，用于将 Html 文档转换到 Microsoft Word �
 
 帮助信息：
 ```
-C:\Documents\dev\build-HTD-Static-Release\release>HTD.exe --help
+INFO: For latest version or other information, visit https://github.com/metorm/HTD
 Usage: HTD.exe [options] input output
 Html to Microsoft Word converter
 
@@ -76,11 +81,14 @@ Options:
   -l, --landscape  Set the paper orientation to landscape
 
 Arguments:
-  input            Path to the HTML file (or any other parsable formats of MS
-                   Word)
-  output           Path to the output file.
+  input            Full path to the HTML file (or any other parsable formats of
+                   MS Word). Only ASCII characters are allowed.
+  output           Full path to the output file. Only ASCII characters are
+                   allowed.
 
 ```
+
+**注意:** 路径必须是全路径。不能有中文或其它非 ASCII 字符.
 
 ## 将 `*.html` 转换到 `*.doc`
 
