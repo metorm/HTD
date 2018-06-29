@@ -16,12 +16,29 @@
  */
 
 #include <QString>
+#include <QFileInfo>
 #include <QAxObject>
 #include <QAxWidget>
 #include <QVariant>
 #include <iostream>
 #include <QThread>
 #include <QApplication>
+
+int getWDFormat(const QString & filePath)
+{
+    QFileInfo fileInfo(filePath);
+    const QString ext = fileInfo.suffix();
+    if(ext == QString("doc"))
+        return 0;
+    else if (ext == QString("rtf"))
+        return 6;
+    else if (ext.startsWith("htm"))
+        return 8;
+    else if (ext.startsWith("mhtm"))
+        return 10;
+    else
+        return 0;
+}
 
 bool convert(const QString & in, const QString & out, bool landscape)
 {
@@ -75,7 +92,20 @@ bool convert(const QString & in, const QString & out, bool landscape)
         pageSetup->setProperty("Orientation", "wdOrientLandscape");
     }
 
-    activeDocument->dynamicCall("SaveAs (const QString&)", out);
+    // ------- Save as --------
+    activeDocument->dynamicCall(
+                "SaveAs(const QVariant&, const QVariant&)",
+                QVariant(out),
+                QVariant(getWDFormat(out)));
+
+    // unlink figures
+    QAxObject* selection = wordAx.querySubObject("Selection");
+    selection->dynamicCall("WholeStory()");
+    QAxObject* fields = selection->querySubObject("Fields");
+    fields->dynamicCall("Unlink()");
+    activeDocument->dynamicCall("save()");
+
+    // close & quit
     activeDocument->dynamicCall("Close (boolean)", false);
     wordAx.dynamicCall("Quit()");
 

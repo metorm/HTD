@@ -70,6 +70,7 @@ int main(int argc, char *argv[])
 
     QStringList acceptableFileExtensions;
     // Add docx if you ensure this is run with Office 2007 or above
+    // After adding any acceptable format, add corresponding tag in convert.cpp - getWDFormat
     acceptableFileExtensions << "doc" << "html" << "htm" << "mht" << "mhtml" << "txt" << "rtf";
 
     if(args.size() >= 2)
@@ -111,7 +112,7 @@ int main(int argc, char *argv[])
             return -1;
         }
 
-        return convert(inputFile, outputFile, parser.isSet(landscapeOption));
+        return convert(inputFile, outputFile, parser.isSet(landscapeOption)) ? 0 : -1;
     }else {
         std::cout << "ERROR: Paths to the input and output files are required!" << std::endl;
         return -1;
