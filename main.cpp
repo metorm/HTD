@@ -112,7 +112,15 @@ int main(int argc, char *argv[])
             return -1;
         }
 
-        return convert(inputFile, outputFile, parser.isSet(landscapeOption)) ? 0 : -1;
+        {
+            const QString inputFilePathForConvert = QDir::toNativeSeparators(inputFileInfo.absoluteFilePath());
+            const QString outputFilePathForConvert = QDir::toNativeSeparators(outputFileInfo.absoluteFilePath());
+
+            return convert(inputFilePathForConvert,
+                           outputFilePathForConvert,
+                           parser.isSet(landscapeOption)) ?
+                        0 : -1;
+        }
     }else {
         std::cout << "ERROR: Paths to the input and output files are required!" << std::endl;
         return -1;
