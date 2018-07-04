@@ -25,8 +25,6 @@ Arguments:
 
 ```
 
-**Note:** The Paths must be full paths. Only ASCII characters are allowed.
-
 ## Convert `*.html` to `*.doc`
 
 The operation is quite straightforward:
@@ -87,8 +85,6 @@ Arguments:
                    allowed.
 
 ```
-
-**注意:** 路径必须是全路径。不能有中文或其它非 ASCII 字符.
 
 ## 将 `*.html` 转换到 `*.doc`
 
